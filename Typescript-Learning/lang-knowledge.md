@@ -1,6 +1,16 @@
 ### 类型
 #### 基本类型。 
 any/number/string/boolean
+```ts
+// string to number
+let num = Number('123');
+parseInt("123");
+parseFlot("12.12");
+
+// number to string
+let s: string = 123.toString();
+let s1: string = 123.toLocalString();
+```
 
 #### 复合类型。
 
@@ -123,4 +133,35 @@ let hello: Hello = {
         return a.toString(); 
     }
 };
+```
+
+### 类
+```ts
+class Animal {
+    name: string;
+    weight: number;
+    static where: string;
+    constructor(name: string, weight: number) {
+        this.name = name;
+        this.weight = weight;
+        Animal.where = "earth";
+    }
+    getName(): string {
+        return this.name;
+    }
+    static speak(): void {
+        console.log('static function from class');
+    }
+}
+
+class Bird extends Animal {
+    hasWing: boolean;
+    constructor(name: string, weight: number, wing: boolean=false) {
+        super(name, weight);
+        this.hasWing = wing;
+    }
+    fly() {
+        console.log(this.name, 'is flying');
+    }
+}
 ```
